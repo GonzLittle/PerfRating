@@ -38,6 +38,7 @@ Public Class AddRating
         End If
     End Sub
 #End Region
+    'For Textboxes alone
 #Region "Bunifu Textboxes"
     Private Sub bunifuddown1_onItemSelected(sender As Object, e As EventArgs) Handles bunifuddown1.onItemSelected
         Saverating()
