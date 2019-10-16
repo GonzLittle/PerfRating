@@ -25,7 +25,7 @@ Public Class MainForm
                 Dim DtSet As New DataSet
                 dba.Fill(DtSet)
                 bunifucd1.DataSource = DtSet.Tables(0).DefaultView
-                'bunifucl1.Text = bunifucd1.CurrentRow.Cells(2).Value.ToString
+                bunifucl1.Text = bunifucd1.CurrentRow.Cells(2).Value.ToString
                 'txtcount.Text = CType(bunifucd1.Rows.Count, String)
             End If
             bunifucd1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
