@@ -106,6 +106,12 @@
     <Compile Include="AddRating.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomDialog.Designer.vb">
+      <DependentUpon>CustomDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddRating.resx">
+      <DependentUpon>AddRating.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomDialog.resx">
+      <DependentUpon>CustomDialog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>

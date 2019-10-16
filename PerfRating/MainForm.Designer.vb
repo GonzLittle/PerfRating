@@ -34,6 +34,8 @@ Partial Class MainForm
         Me.BunifuCustomLabel3 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuCustomLabel4 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pers_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstRating = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstRating_adj = New System.Windows.Forms.DataGridViewComboBoxColumn()
@@ -89,6 +91,10 @@ Partial Class MainForm
         '
         'bunifucd1
         '
+        Me.bunifucd1.AllowUserToAddRows = False
+        Me.bunifucd1.AllowUserToDeleteRows = False
+        Me.bunifucd1.AllowUserToResizeColumns = False
+        Me.bunifucd1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.PowderBlue
         Me.bunifucd1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.bunifucd1.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -104,15 +110,17 @@ Partial Class MainForm
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.bunifucd1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.bunifucd1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.bunifucd1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pers_id, Me.FirstRating, Me.FirstRating_adj, Me.SecondRating, Me.SecondRating_adj, Me.Rating, Me.Adj, Me.Year})
+        Me.bunifucd1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.pers_id, Me.FirstRating, Me.FirstRating_adj, Me.SecondRating, Me.SecondRating_adj, Me.Rating, Me.Adj, Me.Year})
         Me.bunifucd1.DoubleBuffered = True
         Me.bunifucd1.EnableHeadersVisualStyles = False
         Me.bunifucd1.HeaderBgColor = System.Drawing.Color.Teal
         Me.bunifucd1.HeaderForeColor = System.Drawing.Color.White
         Me.bunifucd1.Location = New System.Drawing.Point(142, 95)
         Me.bunifucd1.Name = "bunifucd1"
+        Me.bunifucd1.ReadOnly = True
         Me.bunifucd1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.bunifucd1.RowHeadersWidth = 10
+        Me.bunifucd1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.bunifucd1.Size = New System.Drawing.Size(850, 323)
         Me.bunifucd1.TabIndex = 3
         '
@@ -160,12 +168,55 @@ Partial Class MainForm
         Me.BunifuCustomLabel4.TabIndex = 7
         Me.BunifuCustomLabel4.Text = "© OPA-HRMU Copyright 2020 "
         '
+        'BunifuFlatButton1
+        '
+        Me.BunifuFlatButton1.Activecolor = System.Drawing.Color.Teal
+        Me.BunifuFlatButton1.BackColor = System.Drawing.Color.Teal
+        Me.BunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuFlatButton1.BorderRadius = 0
+        Me.BunifuFlatButton1.ButtonText = "Add New Rating"
+        Me.BunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray
+        Me.BunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent
+        Me.BunifuFlatButton1.Iconimage = CType(resources.GetObject("BunifuFlatButton1.Iconimage"), System.Drawing.Image)
+        Me.BunifuFlatButton1.Iconimage_right = Nothing
+        Me.BunifuFlatButton1.Iconimage_right_Selected = Nothing
+        Me.BunifuFlatButton1.Iconimage_Selected = Nothing
+        Me.BunifuFlatButton1.IconMarginLeft = 0
+        Me.BunifuFlatButton1.IconMarginRight = 0
+        Me.BunifuFlatButton1.IconRightVisible = True
+        Me.BunifuFlatButton1.IconRightZoom = 0R
+        Me.BunifuFlatButton1.IconVisible = True
+        Me.BunifuFlatButton1.IconZoom = 90.0R
+        Me.BunifuFlatButton1.IsTab = False
+        Me.BunifuFlatButton1.Location = New System.Drawing.Point(884, 50)
+        Me.BunifuFlatButton1.Name = "BunifuFlatButton1"
+        Me.BunifuFlatButton1.Normalcolor = System.Drawing.Color.Teal
+        Me.BunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightBlue
+        Me.BunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White
+        Me.BunifuFlatButton1.selected = False
+        Me.BunifuFlatButton1.Size = New System.Drawing.Size(108, 39)
+        Me.BunifuFlatButton1.TabIndex = 8
+        Me.BunifuFlatButton1.Text = "Add New Rating"
+        Me.BunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BunifuFlatButton1.Textcolor = System.Drawing.Color.White
+        Me.BunifuFlatButton1.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.HeaderText = "#"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Width = 30
+        '
         'pers_id
         '
         Me.pers_id.DataPropertyName = "pers_id"
         Me.pers_id.HeaderText = "Pers ID"
         Me.pers_id.MinimumWidth = 3
         Me.pers_id.Name = "pers_id"
+        Me.pers_id.ReadOnly = True
         Me.pers_id.Width = 70
         '
         'FirstRating
@@ -173,6 +224,7 @@ Partial Class MainForm
         Me.FirstRating.DataPropertyName = "FirstRating"
         Me.FirstRating.HeaderText = "Jan to June Score"
         Me.FirstRating.Name = "FirstRating"
+        Me.FirstRating.ReadOnly = True
         Me.FirstRating.Width = 125
         '
         'FirstRating_adj
@@ -182,6 +234,7 @@ Partial Class MainForm
         Me.FirstRating_adj.HeaderText = "Jan to June Rating"
         Me.FirstRating_adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
         Me.FirstRating_adj.Name = "FirstRating_adj"
+        Me.FirstRating_adj.ReadOnly = True
         Me.FirstRating_adj.Width = 109
         '
         'SecondRating
@@ -189,6 +242,7 @@ Partial Class MainForm
         Me.SecondRating.DataPropertyName = "SecondRating"
         Me.SecondRating.HeaderText = "July to Dec Score"
         Me.SecondRating.Name = "SecondRating"
+        Me.SecondRating.ReadOnly = True
         Me.SecondRating.Width = 123
         '
         'SecondRating_adj
@@ -198,6 +252,7 @@ Partial Class MainForm
         Me.SecondRating_adj.HeaderText = "July to Dec Rating"
         Me.SecondRating_adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
         Me.SecondRating_adj.Name = "SecondRating_adj"
+        Me.SecondRating_adj.ReadOnly = True
         Me.SecondRating_adj.Width = 107
         '
         'Rating
@@ -205,6 +260,7 @@ Partial Class MainForm
         Me.Rating.DataPropertyName = "Rating"
         Me.Rating.HeaderText = "Overall Score"
         Me.Rating.Name = "Rating"
+        Me.Rating.ReadOnly = True
         Me.Rating.Width = 103
         '
         'Adj
@@ -214,6 +270,7 @@ Partial Class MainForm
         Me.Adj.HeaderText = "Overall Rating"
         Me.Adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
         Me.Adj.Name = "Adj"
+        Me.Adj.ReadOnly = True
         Me.Adj.Width = 87
         '
         'Year
@@ -221,6 +278,7 @@ Partial Class MainForm
         Me.Year.DataPropertyName = "Year"
         Me.Year.HeaderText = "Year"
         Me.Year.Name = "Year"
+        Me.Year.ReadOnly = True
         Me.Year.Width = 58
         '
         'MainForm
@@ -228,6 +286,7 @@ Partial Class MainForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1011, 450)
+        Me.Controls.Add(Me.BunifuFlatButton1)
         Me.Controls.Add(Me.BunifuCustomLabel4)
         Me.Controls.Add(Me.BunifuCustomLabel3)
         Me.Controls.Add(Me.bunifucl1)
@@ -253,6 +312,8 @@ Partial Class MainForm
     Friend WithEvents BunifuCustomLabel3 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents BunifuCustomLabel4 As Bunifu.Framework.UI.BunifuCustomLabel
+    Friend WithEvents BunifuFlatButton1 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents pers_id As DataGridViewTextBoxColumn
     Friend WithEvents FirstRating As DataGridViewTextBoxColumn
     Friend WithEvents FirstRating_adj As DataGridViewComboBoxColumn

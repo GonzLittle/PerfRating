@@ -68,4 +68,10 @@ Public Class MainForm
         bunifutb1.Select()
 
     End Sub
+
+    Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton1.Click
+        Dim _search As String = bunifutb1.Text.Trim
+        AddRating.bunifutb1.Text = _search
+        AddRating.ShowDialog()
+    End Sub
 End Class
