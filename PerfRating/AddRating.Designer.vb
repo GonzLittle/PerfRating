@@ -38,6 +38,7 @@ Partial Class AddRating
         Me.savebtn = New System.Windows.Forms.Button()
         Me.bunifuddown2 = New System.Windows.Forms.ComboBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.LblName = New Bunifu.Framework.UI.BunifuCustomLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -227,11 +228,25 @@ Partial Class AddRating
         Me.TextBox1.Size = New System.Drawing.Size(178, 24)
         Me.TextBox1.TabIndex = 3
         '
+        'LblName
+        '
+        Me.LblName.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.LblName.AutoSize = True
+        Me.LblName.BackColor = System.Drawing.Color.Transparent
+        Me.LblName.Font = New System.Drawing.Font("Century Gothic", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.LblName.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.LblName.Location = New System.Drawing.Point(12, 48)
+        Me.LblName.Name = "LblName"
+        Me.LblName.Size = New System.Drawing.Size(39, 15)
+        Me.LblName.TabIndex = 109
+        Me.LblName.Text = "Name"
+        '
         'AddRating
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(270, 489)
+        Me.Controls.Add(Me.LblName)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.bunifuddown2)
         Me.Controls.Add(Me.savebtn)
@@ -269,4 +284,5 @@ Partial Class AddRating
     Friend WithEvents savebtn As Button
     Friend WithEvents bunifuddown2 As ComboBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents LblName As Bunifu.Framework.UI.BunifuCustomLabel
 End Class

@@ -1,13 +1,14 @@
 ﻿Imports System.Data.OleDb
 Public Class AddRating
+    'Form On Load Task
     Private Sub AddRating_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Fixed3D
         Loadpicture()
         bunifutb1.Select()
-
     End Sub
-
+    'For CRUD and Validation Purposes
 #Region "Functions"
+    'Picture Load
     Public Sub Loadpicture()
         Try
             Dim idno As String = bunifutb1.Text.ToString
@@ -26,19 +27,54 @@ Public Class AddRating
         Catch ex As Exception
         End Try
     End Sub
-    'Public Sub Saverating()
-    '    If bunifuddown1.selectedIndex = 0 Then
-    '        MessageBox.Show("Jan to June")
-    '    ElseIf bunifuddown1.selectedIndex = 1 Then
-    '        MessageBox.Show("July to Dec")
-    '    End If
-    'End Sub
+    'Save Rating - Add Rating
+    Public Sub Saverating()
+        If bunifuddown1.SelectedIndex = 0 Then
+            Try
+                Myconnection = New OleDbConnection(connString)
+                Dim InsertQuery As String
+                If Myconnection.State = ConnectionState.Open Then
+                    Myconnection.Close()
+                Else
+                    Myconnection.Open()
+                    InsertQuery = ("insert into perfRating (pers_id, Name_emp, FirstRating, FirstRating_adj, Year) values (@t1, @t2, @t3, @t4, @t5)")
+                    Dim cmd As OleDbCommand = New OleDbCommand(InsertQuery, Myconnection)
+                    cmd.Parameters.Add(New OleDbParameter("@t1", OleDbType.VarChar, 10, "pers_id"))
+                    cmd.Parameters.Add(New OleDbParameter("@t2", OleDbType.VarChar, 100, "Name_emp"))
+                    cmd.Parameters.Add(New OleDbParameter("@t3", OleDbType.VarChar, 10, "FirstRating"))
+                    cmd.Parameters.Add(New OleDbParameter("@t4", OleDbType.VarChar, 50, "FirstRating_adj"))
+                    cmd.Parameters.Add(New OleDbParameter("@t5", OleDbType.VarChar, 100, "Year"))
+
+
+                    'cmd.Parameters("@t1").Value = txt1.Text.Trim
+                    'cmd.Parameters("@t2").Value = txt2.Text.Trim
+                    'cmd.Parameters("@t3").Value = Txt3.Text.Trim
+                    'cmd.Parameters("@t4").Value = txt4.Text.Trim
+                    'cmd.Parameters("@t5").Value = txt5.Text.Trim
+
+                    cmd.ExecuteReader()
+                    MessageBox.Show(Me, vbCrLf & "Record Saved." & vbCrLf & vbCrLf & vbCrLf & "©(PGLU-HRMD Series of 2017)", "Human Resource Information System", MessageBoxButtons.OK, MessageBoxIcon.Question)
+                    Me.Close()
+                    'Report.Show()
+
+                End If
+                Myconnection.Close()
+            Catch ex As Exception
+                messagebox.Show(Me, vbCrLf & "Error inserting record!" & vbCrLf & vbCrLf & vbCrLf & "©(PGLU-HRMD Series of 2017)", "Human Resource Information System", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'MsgBox(ex.Message)
+            End Try
+        ElseIf bunifuddown1.SelectedIndex = 1 Then
+
+        End If
+    End Sub
+    'Check Fields if empty
     Public Sub ValidateData()
-        If bunifutb1.Text.Trim = "" Or TextBox1.Text.Trim = "" Or bunifutb4.Text.Trim = "" Then
+        If bunifutb1.Text.Trim = "" Or TextBox1.Text.Trim = "" Or bunifuddown1.Text.Trim = "" Or bunifutb4.Text.Trim = "" Then
             CustomDialog.Messagebtn.Text = "All fields must be provided!"
             CustomDialog.ShowDialog()
         End If
     End Sub
+
 #End Region
     'For Textboxes alone
 #Region "Bunifu Textboxes"
@@ -50,14 +86,10 @@ Public Class AddRating
             Loadpicture()
         End If
     End Sub
-    Private Sub bunifutb2_KeyDown(sender As Object, e As KeyEventArgs)
-
-    End Sub
-
     Private Sub savebtn_Click(sender As Object, e As EventArgs) Handles savebtn.Click
         ValidateData()
+        Saverating()
     End Sub
-
     Private Sub TextBox1_PreviewKeyDown(sender As Object, e As PreviewKeyDownEventArgs) Handles TextBox1.PreviewKeyDown
         If e.KeyCode = Keys.Tab Then
             Try
@@ -82,6 +114,5 @@ Public Class AddRating
             End Try
         End If
     End Sub
-
 #End Region
 End Class

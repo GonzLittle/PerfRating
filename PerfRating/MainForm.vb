@@ -12,7 +12,7 @@ Public Class MainForm
     End Sub
     Public Sub Showrecord()
         Try
-            Dim _bunifutb1 As String = bunifutb1.Text.ToUpper
+            Dim _bunifutb1 As String = bunifutb1.Text.Trim
             bunifutb1.Text = _bunifutb1
             If _bunifutb1 = "" Then
                 MessageBox.Show("Invalid Argument")
@@ -21,7 +21,7 @@ Public Class MainForm
             Else
                 'Dim dba As New OleDbDataAdapter("Select * from PerfRating where pers_id Like '%" & _bunifutb1 & "%' or full_name Like '%" & _bunifutb1 & "%' order by dbo_personal.full_name asc", Myconnection)
 
-                Dim dba As New OleDbDataAdapter("Select * from PerfRating where pers_id Like '%" & _bunifutb1 & "%' or Name_emp Like '%" & _bunifutb1 & "%' order by Year asc", connString)
+                Dim dba As New OleDbDataAdapter("Select * from PerfRating where pers_id Like '%" & _bunifutb1 & "%' order by Year asc", connString)
                 ' pers_id='" & searchname & "' 
                 Dim DtSet As New DataSet
                 dba.Fill(DtSet)
@@ -38,6 +38,14 @@ Public Class MainForm
             CustomDialog.Messagebtn.Text = "Empty Record!"
             CustomDialog.ShowDialog()
         End Try
+    End Sub
+
+    Public Sub AddnewPassParameter()
+        Dim _idnumber As String = bunifutb1.Text.Trim
+        AddRating.bunifutb1.Text = _idnumber
+        Dim _name As String = bunifucl1.Text.Trim
+        AddRating.LblName.Text = _name
+        AddRating.ShowDialog()
     End Sub
 
     Private Sub bunifutb1_KeyDown(sender As Object, e As KeyEventArgs) Handles bunifutb1.KeyDown
@@ -63,7 +71,7 @@ Public Class MainForm
                 PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
                 PictureBox1.Image = Image.FromFile(filename)
                 PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-                ' trial change for git
+
             End If
         Catch ex As Exception
         End Try
@@ -76,14 +84,9 @@ Public Class MainForm
     End Sub
 
     Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton1.Click
-        Dim _search As String = bunifutb1.Text.Trim
-        AddRating.bunifutb1.Text = _search
-        AddRating.ShowDialog()
+        AddnewPassParameter()
     End Sub
 
-    Private Sub AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ctxadd.Click
-
-    End Sub
     Private Sub bunifucd1_MouseDown(sender As Object, e As MouseEventArgs) Handles bunifucd1.MouseDown
         Try
             If e.Button = Windows.Forms.MouseButtons.Right Then
@@ -93,5 +96,9 @@ Public Class MainForm
 
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub ctxadd_Click(sender As Object, e As EventArgs) Handles ctxadd.Click
+        AddnewPassParameter()
     End Sub
 End Class

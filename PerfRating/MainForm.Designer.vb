@@ -23,23 +23,13 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.bunifutb1 = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.bunifucd1 = New Bunifu.Framework.UI.BunifuCustomDataGrid()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Name_emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pers_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstRating = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstRating_adj = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.SecondRating = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SecondRating_adj = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Rating = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Adj = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Year = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bunifucl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel3 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
@@ -51,6 +41,16 @@ Partial Class MainForm
         Me.ctxprint = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctxexport = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctxbackup = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Name_emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pers_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstRating = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstRating_adj = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.SecondRating = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SecondRating_adj = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.Rating = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Adj = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.Year = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bunifucd1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ctxmenu1.SuspendLayout()
@@ -103,20 +103,20 @@ Partial Class MainForm
         Me.bunifucd1.AllowUserToDeleteRows = False
         Me.bunifucd1.AllowUserToResizeColumns = False
         Me.bunifucd1.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.PowderBlue
-        Me.bunifucd1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.PowderBlue
+        Me.bunifucd1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.bunifucd1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.bunifucd1.BackgroundColor = System.Drawing.Color.White
         Me.bunifucd1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.bunifucd1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bunifucd1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bunifucd1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.bunifucd1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.bunifucd1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Name_emp, Me.pers_id, Me.FirstRating, Me.FirstRating_adj, Me.SecondRating, Me.SecondRating_adj, Me.Rating, Me.Adj, Me.Year})
         Me.bunifucd1.DoubleBuffered = True
@@ -131,93 +131,6 @@ Partial Class MainForm
         Me.bunifucd1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.bunifucd1.Size = New System.Drawing.Size(850, 313)
         Me.bunifucd1.TabIndex = 3
-        '
-        'ID
-        '
-        Me.ID.DataPropertyName = "ID"
-        Me.ID.HeaderText = "#"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        Me.ID.Width = 30
-        '
-        'Name_emp
-        '
-        Me.Name_emp.DataPropertyName = "Name_emp"
-        Me.Name_emp.HeaderText = "Name"
-        Me.Name_emp.Name = "Name_emp"
-        Me.Name_emp.ReadOnly = True
-        Me.Name_emp.Visible = False
-        '
-        'pers_id
-        '
-        Me.pers_id.DataPropertyName = "pers_id"
-        Me.pers_id.HeaderText = "Pers ID"
-        Me.pers_id.MinimumWidth = 3
-        Me.pers_id.Name = "pers_id"
-        Me.pers_id.ReadOnly = True
-        Me.pers_id.Width = 70
-        '
-        'FirstRating
-        '
-        Me.FirstRating.DataPropertyName = "FirstRating"
-        Me.FirstRating.HeaderText = "Jan to June Score"
-        Me.FirstRating.Name = "FirstRating"
-        Me.FirstRating.ReadOnly = True
-        Me.FirstRating.Width = 125
-        '
-        'FirstRating_adj
-        '
-        Me.FirstRating_adj.DataPropertyName = "FirstRating_adj"
-        Me.FirstRating_adj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.FirstRating_adj.HeaderText = "Jan to June Rating"
-        Me.FirstRating_adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
-        Me.FirstRating_adj.Name = "FirstRating_adj"
-        Me.FirstRating_adj.ReadOnly = True
-        Me.FirstRating_adj.Width = 109
-        '
-        'SecondRating
-        '
-        Me.SecondRating.DataPropertyName = "SecondRating"
-        Me.SecondRating.HeaderText = "July to Dec Score"
-        Me.SecondRating.Name = "SecondRating"
-        Me.SecondRating.ReadOnly = True
-        Me.SecondRating.Width = 123
-        '
-        'SecondRating_adj
-        '
-        Me.SecondRating_adj.DataPropertyName = "SecondRating_adj"
-        Me.SecondRating_adj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SecondRating_adj.HeaderText = "July to Dec Rating"
-        Me.SecondRating_adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
-        Me.SecondRating_adj.Name = "SecondRating_adj"
-        Me.SecondRating_adj.ReadOnly = True
-        Me.SecondRating_adj.Width = 107
-        '
-        'Rating
-        '
-        Me.Rating.DataPropertyName = "Rating"
-        Me.Rating.HeaderText = "Overall Score"
-        Me.Rating.Name = "Rating"
-        Me.Rating.ReadOnly = True
-        Me.Rating.Width = 103
-        '
-        'Adj
-        '
-        Me.Adj.DataPropertyName = "Adj"
-        Me.Adj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Adj.HeaderText = "Overall Rating"
-        Me.Adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
-        Me.Adj.Name = "Adj"
-        Me.Adj.ReadOnly = True
-        Me.Adj.Width = 87
-        '
-        'Year
-        '
-        Me.Year.DataPropertyName = "Year"
-        Me.Year.HeaderText = "Year"
-        Me.Year.Name = "Year"
-        Me.Year.ReadOnly = True
-        Me.Year.Width = 58
         '
         'bunifucl1
         '
@@ -339,6 +252,94 @@ Partial Class MainForm
         Me.ctxbackup.Name = "ctxbackup"
         Me.ctxbackup.Size = New System.Drawing.Size(145, 22)
         Me.ctxbackup.Text = "Backup DB"
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.HeaderText = "#"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Width = 30
+        '
+        'Name_emp
+        '
+        Me.Name_emp.DataPropertyName = "Name_emp"
+        Me.Name_emp.HeaderText = "Name"
+        Me.Name_emp.Name = "Name_emp"
+        Me.Name_emp.ReadOnly = True
+        Me.Name_emp.Visible = False
+        '
+        'pers_id
+        '
+        Me.pers_id.DataPropertyName = "pers_id"
+        Me.pers_id.HeaderText = "Pers ID"
+        Me.pers_id.MinimumWidth = 3
+        Me.pers_id.Name = "pers_id"
+        Me.pers_id.ReadOnly = True
+        Me.pers_id.Width = 70
+        '
+        'FirstRating
+        '
+        Me.FirstRating.DataPropertyName = "FirstRating"
+        Me.FirstRating.HeaderText = "Jan to June Score"
+        Me.FirstRating.MaxInputLength = 4
+        Me.FirstRating.Name = "FirstRating"
+        Me.FirstRating.ReadOnly = True
+        Me.FirstRating.Width = 125
+        '
+        'FirstRating_adj
+        '
+        Me.FirstRating_adj.DataPropertyName = "FirstRating_adj"
+        Me.FirstRating_adj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.FirstRating_adj.HeaderText = "Jan to June Rating"
+        Me.FirstRating_adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
+        Me.FirstRating_adj.Name = "FirstRating_adj"
+        Me.FirstRating_adj.ReadOnly = True
+        Me.FirstRating_adj.Width = 109
+        '
+        'SecondRating
+        '
+        Me.SecondRating.DataPropertyName = "SecondRating"
+        Me.SecondRating.HeaderText = "July to Dec Score"
+        Me.SecondRating.Name = "SecondRating"
+        Me.SecondRating.ReadOnly = True
+        Me.SecondRating.Width = 123
+        '
+        'SecondRating_adj
+        '
+        Me.SecondRating_adj.DataPropertyName = "SecondRating_adj"
+        Me.SecondRating_adj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SecondRating_adj.HeaderText = "July to Dec Rating"
+        Me.SecondRating_adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
+        Me.SecondRating_adj.Name = "SecondRating_adj"
+        Me.SecondRating_adj.ReadOnly = True
+        Me.SecondRating_adj.Width = 107
+        '
+        'Rating
+        '
+        Me.Rating.DataPropertyName = "Rating"
+        Me.Rating.HeaderText = "Overall Score"
+        Me.Rating.Name = "Rating"
+        Me.Rating.ReadOnly = True
+        Me.Rating.Width = 103
+        '
+        'Adj
+        '
+        Me.Adj.DataPropertyName = "Adj"
+        Me.Adj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Adj.HeaderText = "Overall Rating"
+        Me.Adj.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
+        Me.Adj.Name = "Adj"
+        Me.Adj.ReadOnly = True
+        Me.Adj.Width = 87
+        '
+        'Year
+        '
+        Me.Year.DataPropertyName = "Year"
+        Me.Year.HeaderText = "Year"
+        Me.Year.Name = "Year"
+        Me.Year.ReadOnly = True
+        Me.Year.Width = 58
         '
         'MainForm
         '
