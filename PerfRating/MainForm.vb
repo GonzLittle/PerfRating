@@ -20,8 +20,7 @@ Public Class MainForm
                 MessageBox.Show("4 char minimum")
             Else
                 'Dim dba As New OleDbDataAdapter("Select * from PerfRating where pers_id Like '%" & _bunifutb1 & "%' or full_name Like '%" & _bunifutb1 & "%' order by dbo_personal.full_name asc", Myconnection)
-
-                Dim dba As New OleDbDataAdapter("Select * from PerfRating where pers_id Like '%" & _bunifutb1 & "%' order by Year asc", connString)
+                Dim dba As New OleDbDataAdapter("Select * from PerfRating where pers_id Like '%" & _bunifutb1 & "%' order by Year Desc", connString)
                 ' pers_id='" & searchname & "' 
                 Dim DtSet As New DataSet
                 dba.Fill(DtSet)

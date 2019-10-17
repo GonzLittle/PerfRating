@@ -5,6 +5,7 @@ Public Class AddRating
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Fixed3D
         Loadpicture()
         bunifutb1.Select()
+        Rbtn1.Checked = True
     End Sub
     'For CRUD and Validation Purposes
 #Region "Functions"
@@ -29,7 +30,7 @@ Public Class AddRating
     End Sub
     'Save Rating - Add Rating
     Public Sub Saverating()
-        If bunifuddown1.SelectedIndex = 0 Then
+        If Rbtn1.Checked = True Then
             Try
                 Myconnection = New OleDbConnection(connString)
                 Dim InsertQuery As String
@@ -37,39 +38,66 @@ Public Class AddRating
                     Myconnection.Close()
                 Else
                     Myconnection.Open()
-                    InsertQuery = ("insert into perfRating (pers_id, Name_emp, FirstRating, FirstRating_adj, Year) values (@t1, @t2, @t3, @t4, @t5)")
+                    InsertQuery = ("insert into PerfRating ([pers_id], [FirstRating], [FirstRating_adj], [Year]) values (@t1, @t2, @t3, @t4)")
                     Dim cmd As OleDbCommand = New OleDbCommand(InsertQuery, Myconnection)
                     cmd.Parameters.Add(New OleDbParameter("@t1", OleDbType.VarChar, 10, "pers_id"))
-                    cmd.Parameters.Add(New OleDbParameter("@t2", OleDbType.VarChar, 100, "Name_emp"))
-                    cmd.Parameters.Add(New OleDbParameter("@t3", OleDbType.VarChar, 10, "FirstRating"))
-                    cmd.Parameters.Add(New OleDbParameter("@t4", OleDbType.VarChar, 50, "FirstRating_adj"))
-                    cmd.Parameters.Add(New OleDbParameter("@t5", OleDbType.VarChar, 100, "Year"))
+                    cmd.Parameters.Add(New OleDbParameter("@t2", OleDbType.VarChar, 10, "FirstRating"))
+                    cmd.Parameters.Add(New OleDbParameter("@t3", OleDbType.VarChar, 20, "FirstRating_adj"))
+                    cmd.Parameters.Add(New OleDbParameter("@t4", OleDbType.VarChar, 10, "Year"))
 
-
-                    'cmd.Parameters("@t1").Value = txt1.Text.Trim
-                    'cmd.Parameters("@t2").Value = txt2.Text.Trim
-                    'cmd.Parameters("@t3").Value = Txt3.Text.Trim
-                    'cmd.Parameters("@t4").Value = txt4.Text.Trim
-                    'cmd.Parameters("@t5").Value = txt5.Text.Trim
+                    cmd.Parameters("@t1").Value = bunifutb1.Text.Trim
+                    cmd.Parameters("@t2").Value = bunifutb2.Text.Trim
+                    cmd.Parameters("@t3").Value = bunifutb3.Text.Trim
+                    cmd.Parameters("@t4").Value = bunifutb4.Text.Trim
 
                     cmd.ExecuteReader()
-                    MessageBox.Show(Me, vbCrLf & "Record Saved." & vbCrLf & vbCrLf & vbCrLf & "©(PGLU-HRMD Series of 2017)", "Human Resource Information System", MessageBoxButtons.OK, MessageBoxIcon.Question)
-                    Me.Close()
-                    'Report.Show()
+                    CustomDialog.Messagebtn.Text = "First Semester Rating Saved."
+                    CustomDialog.ShowDialog()
 
                 End If
                 Myconnection.Close()
             Catch ex As Exception
-                messagebox.Show(Me, vbCrLf & "Error inserting record!" & vbCrLf & vbCrLf & vbCrLf & "©(PGLU-HRMD Series of 2017)", "Human Resource Information System", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                'MsgBox(ex.Message)
+                CustomDialog.Messagebtn.Text = "Error inserting record."
+                CustomDialog.ShowDialog()
             End Try
-        ElseIf bunifuddown1.SelectedIndex = 1 Then
+        ElseIf Rbtn2.Checked = True Then
+            Try
+                Myconnection = New OleDbConnection(connString)
+                Dim InsertQuery As String
+                If Myconnection.State = ConnectionState.Open Then
+                    Myconnection.Close()
+                Else
+                    Myconnection.Open()
+                    InsertQuery = ("insert into PerfRating ([pers_id], [SecondRating], [SecondRating_adj], [Year]) values (@t1, @t2, @t3, @t4)")
+                    Dim cmd As OleDbCommand = New OleDbCommand(InsertQuery, Myconnection)
+                    cmd.Parameters.Add(New OleDbParameter("@t1", OleDbType.VarChar, 10, "pers_id"))
+                    cmd.Parameters.Add(New OleDbParameter("@t2", OleDbType.VarChar, 10, "SecondRating"))
+                    cmd.Parameters.Add(New OleDbParameter("@t3", OleDbType.VarChar, 20, "SecondRating_adj"))
+                    cmd.Parameters.Add(New OleDbParameter("@t4", OleDbType.VarChar, 10, "Year"))
 
+                    cmd.Parameters("@t1").Value = bunifutb1.Text.Trim
+                    cmd.Parameters("@t2").Value = bunifutb2.Text.Trim
+                    cmd.Parameters("@t3").Value = bunifutb3.Text.Trim
+                    cmd.Parameters("@t4").Value = bunifutb4.Text.Trim
+
+                    cmd.ExecuteReader()
+                    CustomDialog.Messagebtn.Text = "Second Semester Rating Saved."
+                    CustomDialog.ShowDialog()
+                End If
+                Myconnection.Close()
+            Catch ex As Exception
+                CustomDialog.Messagebtn.Text = "Error inserting record."
+                CustomDialog.ShowDialog()
+                MsgBox(ex.Message)
+            End Try
+        Else
+            CustomDialog.Messagebtn.Text = ("Select Semester.")
+            CustomDialog.ShowDialog()
         End If
     End Sub
     'Check Fields if empty
     Public Sub ValidateData()
-        If bunifutb1.Text.Trim = "" Or TextBox1.Text.Trim = "" Or bunifuddown1.Text.Trim = "" Or bunifutb4.Text.Trim = "" Then
+        If bunifutb1.Text.Trim = "" Or bunifutb2.Text.Trim = "" Or bunifutb4.Text.Trim = "" Then
             CustomDialog.Messagebtn.Text = "All fields must be provided!"
             CustomDialog.ShowDialog()
         End If
@@ -89,21 +117,22 @@ Public Class AddRating
     Private Sub savebtn_Click(sender As Object, e As EventArgs) Handles savebtn.Click
         ValidateData()
         Saverating()
+        MainForm.Showrecord()
     End Sub
-    Private Sub TextBox1_PreviewKeyDown(sender As Object, e As PreviewKeyDownEventArgs) Handles TextBox1.PreviewKeyDown
+    Private Sub TextBox1_PreviewKeyDown(sender As Object, e As PreviewKeyDownEventArgs) Handles bunifutb2.PreviewKeyDown
         If e.KeyCode = Keys.Tab Then
             Try
-                Dim _rate As String = TextBox1.Text.Trim
+                Dim _rate As String = bunifutb2.Text.Trim
                 If _rate <= 1.99 And _rate >= 0 Then
-                    bunifuddown2.Text = "Poor"
+                    bunifutb3.Text = "Poor"
                 ElseIf _rate <= 2.99 And _rate >= 2 Then
-                    bunifuddown2.Text = "Unsatisfactory"
+                    bunifutb3.Text = "Unsatisfactory"
                 ElseIf _rate <= 3.99 And _rate >= 3 Then
-                    bunifuddown2.Text = "Satisfactory"
+                    bunifutb3.Text = "Satisfactory"
                 ElseIf _rate <= 4.99 And _rate >= 4 Then
-                    bunifuddown2.Text = "Very Satisfactory"
+                    bunifutb3.Text = "Very Satisfactory"
                 ElseIf _rate = 5 Then
-                    bunifuddown2.Text = "Outstanding"
+                    bunifutb3.Text = "Outstanding"
                 Else
                     CustomDialog.Messagebtn.Text = ("Not in Range!")
                     CustomDialog.ShowDialog()
