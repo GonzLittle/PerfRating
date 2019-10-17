@@ -29,15 +29,15 @@ Partial Class AddRating
         Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel2 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.bunifutb1 = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.bunifuddown1 = New Bunifu.Framework.UI.BunifuDropdown()
-        Me.bunifutb2 = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.bunifutb3 = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.BunifuCustomLabel3 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.Savebtn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BunifuCustomLabel4 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.bunifutb4 = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.BunifuCustomLabel5 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.bunifuddown1 = New System.Windows.Forms.ComboBox()
+        Me.savebtn = New System.Windows.Forms.Button()
+        Me.bunifuddown2 = New System.Windows.Forms.ComboBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,7 +56,7 @@ Partial Class AddRating
         Me.bunifucl1.Location = New System.Drawing.Point(44, 159)
         Me.bunifucl1.Name = "bunifucl1"
         Me.bunifucl1.Size = New System.Drawing.Size(66, 15)
-        Me.bunifucl1.TabIndex = 5
+        Me.bunifucl1.TabIndex = 100
         Me.bunifucl1.Text = "ID Number:"
         '
         'BunifuCustomLabel1
@@ -66,10 +66,10 @@ Partial Class AddRating
         Me.BunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent
         Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Century Gothic", 8.0!, System.Drawing.FontStyle.Bold)
         Me.BunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(44, 212)
+        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(44, 206)
         Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
         Me.BunifuCustomLabel1.Size = New System.Drawing.Size(94, 15)
-        Me.BunifuCustomLabel1.TabIndex = 6
+        Me.BunifuCustomLabel1.TabIndex = 101
         Me.BunifuCustomLabel1.Text = "Select Semester:"
         '
         'BunifuCustomLabel2
@@ -79,10 +79,10 @@ Partial Class AddRating
         Me.BunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent
         Me.BunifuCustomLabel2.Font = New System.Drawing.Font("Century Gothic", 8.0!, System.Drawing.FontStyle.Bold)
         Me.BunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BunifuCustomLabel2.Location = New System.Drawing.Point(44, 261)
+        Me.BunifuCustomLabel2.Location = New System.Drawing.Point(44, 255)
         Me.BunifuCustomLabel2.Name = "BunifuCustomLabel2"
         Me.BunifuCustomLabel2.Size = New System.Drawing.Size(41, 15)
-        Me.BunifuCustomLabel2.TabIndex = 7
+        Me.BunifuCustomLabel2.TabIndex = 103
         Me.BunifuCustomLabel2.Text = "Score:"
         '
         'bunifutb1
@@ -91,7 +91,7 @@ Partial Class AddRating
         Me.bunifutb1.BorderColorFocused = System.Drawing.Color.Teal
         Me.bunifutb1.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.bunifutb1.BorderColorMouseHover = System.Drawing.Color.PowderBlue
-        Me.bunifutb1.BorderThickness = 3
+        Me.bunifutb1.BorderThickness = 1
         Me.bunifutb1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.bunifutb1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.bunifutb1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -99,65 +99,10 @@ Partial Class AddRating
         Me.bunifutb1.Location = New System.Drawing.Point(47, 178)
         Me.bunifutb1.Margin = New System.Windows.Forms.Padding(4)
         Me.bunifutb1.Name = "bunifutb1"
-        Me.bunifutb1.Size = New System.Drawing.Size(178, 30)
-        Me.bunifutb1.TabIndex = 10
-        Me.bunifutb1.Tag = "1"
+        Me.bunifutb1.Size = New System.Drawing.Size(178, 24)
+        Me.bunifutb1.TabIndex = 1
+        Me.bunifutb1.Tag = ""
         Me.bunifutb1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'bunifuddown1
-        '
-        Me.bunifuddown1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.bunifuddown1.BackColor = System.Drawing.Color.Transparent
-        Me.bunifuddown1.BorderRadius = 3
-        Me.bunifuddown1.DisabledColor = System.Drawing.Color.Gray
-        Me.bunifuddown1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.bunifuddown1.ForeColor = System.Drawing.Color.White
-        Me.bunifuddown1.Items = New String() {"Jan to June", "July to Dec"}
-        Me.bunifuddown1.Location = New System.Drawing.Point(47, 231)
-        Me.bunifuddown1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.bunifuddown1.Name = "bunifuddown1"
-        Me.bunifuddown1.NomalColor = System.Drawing.Color.Teal
-        Me.bunifuddown1.onHoverColor = System.Drawing.Color.LightBlue
-        Me.bunifuddown1.selectedIndex = -1
-        Me.bunifuddown1.Size = New System.Drawing.Size(178, 26)
-        Me.bunifuddown1.TabIndex = 5
-        '
-        'bunifutb2
-        '
-        Me.bunifutb2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.bunifutb2.BorderColorFocused = System.Drawing.Color.Teal
-        Me.bunifutb2.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.bunifutb2.BorderColorMouseHover = System.Drawing.Color.PowderBlue
-        Me.bunifutb2.BorderThickness = 3
-        Me.bunifutb2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.bunifutb2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.bunifutb2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.bunifutb2.isPassword = False
-        Me.bunifutb2.Location = New System.Drawing.Point(47, 280)
-        Me.bunifutb2.Margin = New System.Windows.Forms.Padding(4)
-        Me.bunifutb2.Name = "bunifutb2"
-        Me.bunifutb2.Size = New System.Drawing.Size(178, 30)
-        Me.bunifutb2.TabIndex = 2
-        Me.bunifutb2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'bunifutb3
-        '
-        Me.bunifutb3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.bunifutb3.BorderColorFocused = System.Drawing.Color.Teal
-        Me.bunifutb3.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.bunifutb3.BorderColorMouseHover = System.Drawing.Color.PowderBlue
-        Me.bunifutb3.BorderThickness = 3
-        Me.bunifutb3.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.bunifutb3.Enabled = False
-        Me.bunifutb3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.bunifutb3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.bunifutb3.isPassword = False
-        Me.bunifutb3.Location = New System.Drawing.Point(47, 333)
-        Me.bunifutb3.Margin = New System.Windows.Forms.Padding(4)
-        Me.bunifutb3.Name = "bunifutb3"
-        Me.bunifutb3.Size = New System.Drawing.Size(178, 30)
-        Me.bunifutb3.TabIndex = 3
-        Me.bunifutb3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'BunifuCustomLabel3
         '
@@ -166,46 +111,11 @@ Partial Class AddRating
         Me.BunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent
         Me.BunifuCustomLabel3.Font = New System.Drawing.Font("Century Gothic", 8.0!, System.Drawing.FontStyle.Bold)
         Me.BunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BunifuCustomLabel3.Location = New System.Drawing.Point(44, 314)
+        Me.BunifuCustomLabel3.Location = New System.Drawing.Point(44, 300)
         Me.BunifuCustomLabel3.Name = "BunifuCustomLabel3"
         Me.BunifuCustomLabel3.Size = New System.Drawing.Size(44, 15)
-        Me.BunifuCustomLabel3.TabIndex = 14
+        Me.BunifuCustomLabel3.TabIndex = 104
         Me.BunifuCustomLabel3.Text = "Rating:"
-        '
-        'Savebtn
-        '
-        Me.Savebtn.Activecolor = System.Drawing.Color.Teal
-        Me.Savebtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Savebtn.BackColor = System.Drawing.Color.Teal
-        Me.Savebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Savebtn.BorderRadius = 0
-        Me.Savebtn.ButtonText = "Save"
-        Me.Savebtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Savebtn.DisabledColor = System.Drawing.Color.Gray
-        Me.Savebtn.Iconcolor = System.Drawing.Color.Transparent
-        Me.Savebtn.Iconimage = CType(resources.GetObject("Savebtn.Iconimage"), System.Drawing.Image)
-        Me.Savebtn.Iconimage_right = Nothing
-        Me.Savebtn.Iconimage_right_Selected = Nothing
-        Me.Savebtn.Iconimage_Selected = Nothing
-        Me.Savebtn.IconMarginLeft = 0
-        Me.Savebtn.IconMarginRight = 0
-        Me.Savebtn.IconRightVisible = True
-        Me.Savebtn.IconRightZoom = 0R
-        Me.Savebtn.IconVisible = True
-        Me.Savebtn.IconZoom = 90.0R
-        Me.Savebtn.IsTab = False
-        Me.Savebtn.Location = New System.Drawing.Point(145, 432)
-        Me.Savebtn.Name = "Savebtn"
-        Me.Savebtn.Normalcolor = System.Drawing.Color.Teal
-        Me.Savebtn.OnHovercolor = System.Drawing.Color.LightBlue
-        Me.Savebtn.OnHoverTextColor = System.Drawing.Color.White
-        Me.Savebtn.selected = False
-        Me.Savebtn.Size = New System.Drawing.Size(80, 28)
-        Me.Savebtn.TabIndex = 15
-        Me.Savebtn.Text = "Save"
-        Me.Savebtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Savebtn.Textcolor = System.Drawing.Color.White
-        Me.Savebtn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'PictureBox1
         '
@@ -224,10 +134,10 @@ Partial Class AddRating
         Me.BunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent
         Me.BunifuCustomLabel4.Font = New System.Drawing.Font("Century Gothic", 8.0!, System.Drawing.FontStyle.Bold)
         Me.BunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BunifuCustomLabel4.Location = New System.Drawing.Point(44, 367)
+        Me.BunifuCustomLabel4.Location = New System.Drawing.Point(44, 346)
         Me.BunifuCustomLabel4.Name = "BunifuCustomLabel4"
         Me.BunifuCustomLabel4.Size = New System.Drawing.Size(35, 15)
-        Me.BunifuCustomLabel4.TabIndex = 18
+        Me.BunifuCustomLabel4.TabIndex = 105
         Me.BunifuCustomLabel4.Text = "Year:"
         '
         'bunifutb4
@@ -236,15 +146,15 @@ Partial Class AddRating
         Me.bunifutb4.BorderColorFocused = System.Drawing.Color.Teal
         Me.bunifutb4.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.bunifutb4.BorderColorMouseHover = System.Drawing.Color.PowderBlue
-        Me.bunifutb4.BorderThickness = 3
+        Me.bunifutb4.BorderThickness = 1
         Me.bunifutb4.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.bunifutb4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.bunifutb4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.bunifutb4.isPassword = False
-        Me.bunifutb4.Location = New System.Drawing.Point(47, 386)
+        Me.bunifutb4.Location = New System.Drawing.Point(47, 365)
         Me.bunifutb4.Margin = New System.Windows.Forms.Padding(4)
         Me.bunifutb4.Name = "bunifutb4"
-        Me.bunifutb4.Size = New System.Drawing.Size(178, 30)
+        Me.bunifutb4.Size = New System.Drawing.Size(178, 25)
         Me.bunifutb4.TabIndex = 4
         Me.bunifutb4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -260,20 +170,77 @@ Partial Class AddRating
         Me.BunifuCustomLabel5.TabIndex = 19
         Me.BunifuCustomLabel5.Text = "Add Rating"
         '
+        'bunifuddown1
+        '
+        Me.bunifuddown1.BackColor = System.Drawing.SystemColors.Control
+        Me.bunifuddown1.DropDownHeight = 100
+        Me.bunifuddown1.DropDownWidth = 200
+        Me.bunifuddown1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.bunifuddown1.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.bunifuddown1.FormattingEnabled = True
+        Me.bunifuddown1.IntegralHeight = False
+        Me.bunifuddown1.Items.AddRange(New Object() {"Jan to June", "July to Dec"})
+        Me.bunifuddown1.Location = New System.Drawing.Point(47, 227)
+        Me.bunifuddown1.Name = "bunifuddown1"
+        Me.bunifuddown1.Size = New System.Drawing.Size(178, 25)
+        Me.bunifuddown1.TabIndex = 2
+        '
+        'savebtn
+        '
+        Me.savebtn.BackColor = System.Drawing.Color.Teal
+        Me.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.savebtn.Font = New System.Drawing.Font("Century Gothic", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.savebtn.ForeColor = System.Drawing.Color.White
+        Me.savebtn.Location = New System.Drawing.Point(150, 397)
+        Me.savebtn.Name = "savebtn"
+        Me.savebtn.Size = New System.Drawing.Size(75, 33)
+        Me.savebtn.TabIndex = 107
+        Me.savebtn.Text = "Save"
+        Me.savebtn.UseVisualStyleBackColor = False
+        '
+        'bunifuddown2
+        '
+        Me.bunifuddown2.AutoCompleteCustomSource.AddRange(New String() {"Outsanding", "Very Satisfactory", "Satisfactoy", "Unsactisfactory", "Poor"})
+        Me.bunifuddown2.BackColor = System.Drawing.SystemColors.Control
+        Me.bunifuddown2.DropDownHeight = 100
+        Me.bunifuddown2.DropDownWidth = 200
+        Me.bunifuddown2.Enabled = False
+        Me.bunifuddown2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.bunifuddown2.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.bunifuddown2.FormattingEnabled = True
+        Me.bunifuddown2.IntegralHeight = False
+        Me.bunifuddown2.Items.AddRange(New Object() {"Outstanding", "Very Satisfactory", "Satisfactory", "Unsatisfactory", "Poor"})
+        Me.bunifuddown2.Location = New System.Drawing.Point(47, 318)
+        Me.bunifuddown2.Name = "bunifuddown2"
+        Me.bunifuddown2.Size = New System.Drawing.Size(178, 25)
+        Me.bunifuddown2.TabIndex = 108
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.TextBox1.Location = New System.Drawing.Point(47, 273)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(178, 24)
+        Me.TextBox1.TabIndex = 3
+        '
         'AddRating
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(270, 489)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.bunifuddown2)
+        Me.Controls.Add(Me.savebtn)
+        Me.Controls.Add(Me.bunifuddown1)
         Me.Controls.Add(Me.BunifuCustomLabel5)
         Me.Controls.Add(Me.BunifuCustomLabel4)
         Me.Controls.Add(Me.bunifutb4)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Savebtn)
         Me.Controls.Add(Me.BunifuCustomLabel3)
-        Me.Controls.Add(Me.bunifutb3)
-        Me.Controls.Add(Me.bunifutb2)
-        Me.Controls.Add(Me.bunifuddown1)
         Me.Controls.Add(Me.bunifutb1)
         Me.Controls.Add(Me.BunifuCustomLabel2)
         Me.Controls.Add(Me.BunifuCustomLabel1)
@@ -292,14 +259,14 @@ Partial Class AddRating
     Friend WithEvents bunifucl1 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BunifuCustomLabel2 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BunifuCustomLabel1 As Bunifu.Framework.UI.BunifuCustomLabel
-    Friend WithEvents bunifuddown1 As Bunifu.Framework.UI.BunifuDropdown
     Friend WithEvents bunifutb1 As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents BunifuCustomLabel3 As Bunifu.Framework.UI.BunifuCustomLabel
-    Friend WithEvents bunifutb3 As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents bunifutb2 As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Savebtn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuCustomLabel4 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents bunifutb4 As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents BunifuCustomLabel5 As Bunifu.Framework.UI.BunifuCustomLabel
+    Friend WithEvents bunifuddown1 As ComboBox
+    Friend WithEvents savebtn As Button
+    Friend WithEvents bunifuddown2 As ComboBox
+    Friend WithEvents TextBox1 As TextBox
 End Class
