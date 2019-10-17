@@ -63,6 +63,7 @@ Public Class MainForm
                 PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
                 PictureBox1.Image = Image.FromFile(filename)
                 PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+                ' trial change for git
             End If
         Catch ex As Exception
         End Try
